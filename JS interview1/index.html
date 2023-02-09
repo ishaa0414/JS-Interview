@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS interview 1</title>
+</head>
+<body>
+    <h1><u>DAY-1</u></h1>
+    <h2>Difference between “ == “ and “ === “ operators.</h2>
+    1. Both are comparison operators and they return boolean values always. The difference
+between both the operators is that “==” is used to compare values whereas “ === “ is
+used to compare both value and datatype.
+2. var x="2";
+var y=2;
+3. console.log(x==y); It returns true because it only check values not data types. It is able
+to check the values because in == it will do type coercion to change the data type so that
+the value can be compared.
+4. console.log(x===y); It returns false because you can see that values are same but x is of
+String type and y is of Number type. You can find the type of any value by using typeof
+operator.
+5. So in strict equal comparison operator both value and data types should be same like x=2
+and y=2 otherwise it returns false.
+<hr>
+<h2>What is the spread operator?</h2>
+The JavaScript spread operator (...) allows us to destructure the non-primitive data types like
+arrays and objects to access the elements individually.
+Code:
+const numbersOne = [1, 2, 3];
+const numbersTwo = [4, 5, 6];
+const numbersCombined = [...numbersOne, ...numbersTwo];
+console.log(numbersCombined)
+Output:
+[1,2,3,4,5,6]
+<hr>
+<h2>What are the differences between var, let and const?</h2>
+var is a global scoped means variables created using var keyword will be accessible globally. It
+can be redeclared and reinitialized.
+var a = 10;
+let is a block scoped means variables created using let keyword will be accessible only in that
+specific block where it has been declared. It cannot be redeclared but it can be reinitialized.
+let a = 20;
+const is also block scoped means variables created using const keyword will be accessible only
+in that specific block where it has been declared. It cannot be redeclared and cannot be
+reinitialized.
+const a = 30;
+<hr>
+<h2>What is execution context</h2>
+Each and every browser is having a JavaScript Engine, example Google is having V8 engine,
+Internet Explorer is having Chakra and Mozilla Firefox is having Spider Monkey.
+JS engine uses a Call stack and also creates a special environment to handle the execution of
+the JavaScript code. This environment is known as the Execution Context.
+The Execution Context contains the code that's currently running, and everything that aids in
+its execution.
+During the Execution Context run-time, the specific code gets parsed by a parser, the variables
+and functions are stored in memory, executable byte-code gets generated, and the code gets
+executed.
+There are two kinds of Execution Context in JavaScript:
+1. Global Execution Context (GEC)
+2. Function Execution Context (FEC)
+<hr>
+<h2>What is meant by first class functions</h2>
+A programming language is said to have First-class functions when functions in that language
+are treated like any other variable. For example, in such a language, a function can be passed as
+an argument to other functions, can be returned by another function and can be assigned as a
+value to a variable.
+
+<hr>
+<h2>What are closures? Give an example of closure</h2>
+
+A closure is the combination of a function bundled together (enclosed) with references to its
+surrounding state (the lexical environment). In other words, a closure gives you access to an
+outer function's scope from an inner function. In JavaScript, closures are created every time a
+function is created, at function creation time.
+<hr>
+<h2>Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h2>
+These all three methods are used to invoke a function where we are supposed to pass an object
+as first argument and at the time of definition we don't have mention this object as a parameter
+and we can access the values of object by using this keyword in function definition.
+call(): The call() method invokes a function in which first argument will be the object and rest
+of the arguments required by function will be provided as an individual arguments.
+apply(): The apply() method invokes a function in which first argument will be the object and
+rest of the arguments will be passed as an array of elements.
+bind: The bind() method returns a new function and this function will be having the reference
+of the object passed, now whenever you want to use this returned function in the code you can
+use it by passing rest of the arguments.
+<hr>
+</body>
+</html>

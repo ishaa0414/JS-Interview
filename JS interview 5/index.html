@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS interview 5</title>
+</head>
+<body>
+   <h1><u>DAY-5</u></h1>
+   <h2>What is the for-in loop in JavaScript? Give its syntax</h2> 
+   The for-in loop is a special type of a loop that iterates over the properties of an object, or the
+elements of an array. for - in loop : returns you the indexes of the array. The generic syntax of
+the for-in loop is:
+for(variable in object) {
+// Code to be executed
+}
+<hr>
+<h2>Explain Local Scope, Block Scope, Functional Scope and Scope Chain in javascript</h2>
+The scope will let us know at a given part of code, what are the variables and functions that we
+can or cannot access.
+There are three types of scopes in JS:
+1. Global Scope
+2. Local or Function Scope
+3. Block Scope
+Global scope:A variable declared at the top of a program or outside of a function is considered
+a global scope variable.
+Local scope:A variable can also have a local scope, i.e it can only be accessed within a
+function.
+Block scope: It is related to the variables declared using let and const. Variables declared with
+var do not have block scope.
+Block scope tells us that any variable declared inside a block { }, can be accessed only inside
+that block and cannot be accessed outside of it.
+scope chain: JavaScript engine also uses Scope to find variables.
+<hr>
+<h2>What is difference between null and undefined and where to use what?</h2>
+In JavaScript, undefined means a variable has been declared but has not yet been assigned a
+value, such as:
+var testVar;
+alert(testVar); //shows undefined
+alert(typeof testVar); //shows undefined
+null is an assignment value. It can be assigned to a variable as a representation of no value:
+var testVar = null; alert(testVar); //shows null
+alert(typeof testVar); //shows object
+<hr>
+<h2>what is Symbol?</h2>
+Symbols are often used to add unique property keys to an object that won't collide with keys any other code might add to the object, and which are hidden from any mechanisms other code will typically use to access the object.
+<hr>
+<h2>Write code to explain map and filter in arrays</h2>
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(item => item * 2);
+console.log(doubled); // [2, 4, 6, 8]
+var numbers = [1,2,3,4,5];
+var greaterThan2 = numbers.filter(n => n > 2);
+greaterThan2; // [3,4,5]
+<hr>
+<h2>Explain passed by value and passed by reference</h2>
+Pass By Value: In Pass by value, function is called by directly passing the value of the variable as an argument. So any changes made inside the function does not affect the original value.
+
+In Pass by value, parameters passed as an arguments create its own copy. So any changes made inside the function is made to the copied value not to the original value .
+Pass by Reference: In Pass by Reference, Function is called by directly passing the reference/address of the variable as an argument. So changing the value inside the function also change the original value. In JavaScript array and Object follows pass by reference property.
+<hr>
+<h2>Please explain Self Invoking Function and its code</h2>
+IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it
+is defined and it is anonymous function. The signature of it would be as below,
+(function ()
+// logic here
+}
+)();
+The primary reason to use an IIFE is to obtain data privacy because any variables declared
+within the IIFE cannot be accessed by the outside world. i.e, If you try to access variables with
+IIFE then it throws an error as below,
+(function ()
+{
+var message = "IIFE";
+console.log(message); //IIFE
+}
+)();
+console.log(message); //Error: message is not defined
+<hr>
+</body>
+</html>
